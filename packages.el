@@ -89,10 +89,8 @@ Each entry is either:
       )
     :config
     (progn
-      ;;(require 'emms-setup)
       (emms-all)
       (emms-mode-line 0)
-      (emms-playing-time 1)
       (emms-default-players)
       (autoload 'emms-smart-browse "emms-browser.el" "Browse with EMMS" t)
       (define-key emms-browser-mode-map (kbd "D") 'emms-browser-move-files-to-trash)
@@ -150,7 +148,11 @@ Each entry is either:
   (use-package emms-state
     ;; for some reason if this is deferred you can't bring up the smart browser.
     :config
-    (emms-state-mode 0)
+    (progn
+      (emms-state-mode 0)
+      ;;WORKAROUND: emms-state overwrites emms-playing-time, we fix it
+      (emms-playing-time 1)
+      )
     ))
 
 (defun media/init-helm-emms ()
