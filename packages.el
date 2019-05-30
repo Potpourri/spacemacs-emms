@@ -84,6 +84,8 @@ Each entry is either:
 
       (add-hook 'emms-browser-show-display-hook 'evil-initialize)
       (add-hook 'emms-stream-hook 'evil-initialize)
+
+      (setq emms-directory (expand-file-name ".cache/emms" user-emacs-directory))
       )
     :config
     (progn
