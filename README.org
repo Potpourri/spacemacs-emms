@@ -1,3 +1,4 @@
+#+STARTUP: showall
 #+TITLE: media layer
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
 
@@ -7,26 +8,33 @@
 [[img/media.png]]
 
 * Table of Contents                                        :TOC_4_org:noexport:
- - [[Description][Description]]
- - [[Install][Install]]
-   - [[EMMS configuration ][EMMS configuration ]]
-   - [[Configuring media keys][Configuring media keys]]
-     - [[Setting the media keys on Mac OS X][Setting the media keys on Mac OS X]]
- - [[Key bindings][Key bindings]]
-   - [[Evilified keybindings][Evilified keybindings]]
-     - [[Interactive Playlists][Interactive Playlists]]
-     - [[Mark Playlists ][Mark Playlists ]]
-     - [[EMMS Browser ][EMMS Browser ]]
-     - [[Track (tag) Information Editor ][Track (tag) Information Editor ]]
- - [[Issues][Issues]]
+- [[Description][Description]]
+- [[Install][Install]]
+  - [[EMMS configuration][EMMS configuration]]
+  - [[Configuring media keys][Configuring media keys]]
+    - [[Setting the media keys on Mac OS X][Setting the media keys on Mac OS X]]
+- [[Key bindings][Key bindings]]
+  - [[Evilified keybindings][Evilified keybindings]]
+    - [[Interactive Playlists][Interactive Playlists]]
+    - [[Mark Playlists][Mark Playlists]]
+    - [[EMMS Browser][EMMS Browser]]
+    - [[Track (tag) Information Editor][Track (tag) Information Editor]]
+- [[Issues][Issues]]
+- [[License][License]]
 
 * Description
+*Fork note:* This layer is based on [[https://github.com/alejandroerickson][@alejandroerickson]]’s PR from
+https://github.com/syl20bnr/spacemacs/pull/6435.
+
 This layer installs and configures media library management software EMMS.
 
 https://www.gnu.org/software/emms/
 
 * Install
-To use the media layer add it to your =~/.spacemacs=
+To use the media layer:
+- place this repository in one of Spacemacs's layer directories
+  (~/.emacs.d/private/local/exwm, ~/.spacemacs.d/private/exwm, or ~/.spacemacs.d/layers/exwm)
+- add the layer in your =~/.spacemacs=
 
 #+begin_src emacs-lisp
   (setq-default dotspacemacs-configuration-layers '(media))
@@ -258,5 +266,5 @@ the usual marking features. Operations should occur on all marked tracks.
   - layer does not support MusicPD yet
   - layer does not support emms-lyrics yet
 
-
-  
+* License
+[[./LICENSE][GPLv3]]
