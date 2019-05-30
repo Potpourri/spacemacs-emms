@@ -7,20 +7,20 @@
 # The maximum height of the logo should be 200 pixels.
 [[img/media.png]]
 
-* Table of Contents                                        :TOC_4_org:noexport:
-- [[Description][Description]]
-- [[Install][Install]]
-  - [[EMMS configuration][EMMS configuration]]
-  - [[Configuring media keys][Configuring media keys]]
-    - [[Setting the media keys on Mac OS X][Setting the media keys on Mac OS X]]
-- [[Key bindings][Key bindings]]
-  - [[Evilified keybindings][Evilified keybindings]]
-    - [[Interactive Playlists][Interactive Playlists]]
-    - [[Mark Playlists][Mark Playlists]]
-    - [[EMMS Browser][EMMS Browser]]
-    - [[Track (tag) Information Editor][Track (tag) Information Editor]]
-- [[Issues][Issues]]
-- [[License][License]]
+* Table of Contents                                        :TOC_5_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+  - [[#emms-configuration][EMMS configuration]]
+  - [[#configuring-media-keys][Configuring media keys]]
+    - [[#setting-the-media-keys-on-mac-os-x][Setting the media keys on Mac OS X]]
+- [[#key-bindings][Key bindings]]
+  - [[#evilified-keybindings][Evilified keybindings]]
+    - [[#interactive-playlists][Interactive Playlists]]
+    - [[#mark-playlists][Mark Playlists]]
+    - [[#emms-browser][EMMS Browser]]
+    - [[#track-tag-information-editor][Track (tag) Information Editor]]
+- [[#issues][Issues]]
+- [[#license][License]]
 
 * Description
 *Fork note:* This layer is based on [[https://github.com/alejandroerickson][@alejandroerickson]]’s PR from
@@ -33,7 +33,7 @@ https://www.gnu.org/software/emms/
 * Install
 To use the media layer:
 - place this repository in one of Spacemacs's layer directories
-  (~/.emacs.d/private/local/exwm, ~/.spacemacs.d/private/exwm, or ~/.spacemacs.d/layers/exwm)
+  (=~/.emacs.d/private/local/exwm=, =~/.spacemacs.d/private/exwm=, or =~/.spacemacs.d/layers/exwm=)
 - add the layer in your =~/.spacemacs=
 
 #+begin_src emacs-lisp
@@ -48,32 +48,25 @@ you can set the root directory of that tree as EMMS's default.
 #+end_src
 
 When you first open the EMMS browser it will prompt you to add music. It then
-builds a cache of track info, defaulting to the directory ~/.emacs.d/emms.
+builds a cache of track info, defaulting to the directory =~/.emacs.d/.cache/emms=.
 Before doing so install a track info reader to properly extract track
 information, otherwise you will encounter errors and the track info will not be
-read. We recommend you use
-[TagLib](https://www.gnu.org/software/emms/manual/#Using-TagLib), the one
-included with EMMS, by compiling and installing it to your path.
+read. We recommend you use TagLib, see [[https://www.gnu.org/software/emms/manual/#Using-TagLib][EMMS manual]] - for how-to compile and install.
+If you use [[https://nixos.org/nix/][Nix]], then see [[https://github.com/Potpourri/dotfiles/blob/master/nixos/nixpkgs/overlays/potpourri-overlay.nix][my overlay]].
 
-#+begin_src shell 
-$ cd
-~/.emacs.d/elpa/emms-<version>/cd-here-and-make-emms-print-metadata-and-put-in-path/
-$ make emms-print-metadata
-#+end_src
-
-If it compiles successfully, put the executable in your PATH (you can check
-the value of PATH with the `getenv` command).  Now when you add music it should
+If it compiles successfully, put the executable in your =PATH= (you can check
+the value of =PATH= with the =getenv= command). Now when you add music it should
 populate the smart browser properly with names of tracks, albums, artists, etc.
-Re-add your music by deleting the ~/.emacs.d/emms directory, where the cache and
+Re-add your music by deleting the =~/.emacs.d/.cache/emms= directory, where the cache and
 history are located.
 
 Find the home page and full manual here:
-https://www.gnu.org/software/emms/
-https://www.gnu.org/software/emms/manual/
+- https://www.gnu.org/software/emms/
+- https://www.gnu.org/software/emms/manual/
 
 Most importantly, you will need a media player. By default, the media layer is
 set up to support mpg321, ogg123, mplayer, and vlc. Install one of these and
-ensure that Emacs can find it in your PATH.
+ensure that Emacs can find it in your =PATH=.
 
 
 ** EMMS configuration 
