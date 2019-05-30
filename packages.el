@@ -31,16 +31,7 @@
 
 (defconst media-packages
   '(
-    ;; We need this recipe because MELPA version doesn't download the taglib metadata reader
-    (emms :location (recipe
-                     :fetcher github
-                     :repo "alejandroerickson/emms"
-                     :files ("lisp/*.el"
-                             ("cd-here-and-make-emms-print-metadata-and-put-in-path" "Makefile")
-                             ("cd-here-and-make-emms-print-metadata-and-put-in-path/src" "src/*")
-                             )
-                     )
-          )
+    emms
     emms-state
     helm-emms
     )
