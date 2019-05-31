@@ -97,6 +97,9 @@ Each entry is either:
       (define-key emms-browser-mode-map (kbd "t") 'emms-browser-toggle-subitems)
       (require 'emms-info-libtag)
       (setq emms-info-functions '(emms-info-libtag))
+      ;; add .git dir to excludes
+      (setq emms-source-file-exclude-regexp (concat emms-source-file-exclude-regexp
+                                                    "\\|/\\.git\\(/\\|\\'\\)"))
 
       (evilified-state-evilify-map emms-stream-mode-map
         :mode emms-stream-mode
