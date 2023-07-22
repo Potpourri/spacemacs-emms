@@ -33,7 +33,7 @@ https://www.gnu.org/software/emms/
 * Install
 To use the media layer:
 - place this repository in one of Spacemacs's layer directories
-  (=~/.emacs.d/private/local/exwm=, =~/.spacemacs.d/private/exwm=, or =~/.spacemacs.d/layers/exwm=)
+  (=~/.emacs.d/private/local/emms=, =~/.spacemacs.d/private/emms=, or =~/.spacemacs.d/layers/emms=)
 - add the layer in your =~/.spacemacs=
 
 #+begin_src emacs-lisp
